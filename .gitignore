@@ -113,3 +113,6 @@ package-lock.json
 
 # certs
 certs/
+
+# vs code files
+.vscode/
