@@ -19,6 +19,9 @@ WORKDIR /app/src/backend
 ENV FLASK_ENV development
 ENV MOTUZ_HOST 0.0.0.0
 
-RUN python3 manage.py db migrate
+RUN  useradd -d /home/aicioara -m aicioara
+RUN echo 'aicioara:ThisIsNotSecure' | chpasswd
+
+RUN python3 manage.py db upgrade
 
 CMD python3 manage.py run
