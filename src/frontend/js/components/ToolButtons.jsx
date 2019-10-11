@@ -13,6 +13,15 @@ class ToolButtons extends React.Component {
             <React.Fragment>
                 <button
                     className="btn btn-outline-primary my-2 mx-1 my-sm-0"
+                    onClick={event => this.props.onAWSLoginDialog()}
+                    alt='AWS Login'
+                    title='AWS Login'
+                    aria-label='AWS Login'
+                >
+                    <Icon name='sign-in'/>
+                </button>
+                <button
+                    className="btn btn-outline-primary my-2 mx-1 my-sm-0"
                     onClick={event => this.props.onShowMkdirDialog()}
                     alt='Create Folder'
                     title='Create Folder'

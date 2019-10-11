@@ -204,6 +204,14 @@ class RcloneConnection(AbstractConnection):
                 '{}_SECRET_ACCESS_KEY'.format(prefix),
                 's3_secret_access_key'
             )
+            credentials = _addCredential(credentials,
+                '{}_SESSION_TOKEN'.format(prefix),
+                's3_aws_session_token'
+            )
+            credentials = _addCredential(credentials,
+                '{}_ENV_AUTH'.format(prefix),
+                's3_env_auth'
+            )
 
             credentials = _addCredential(credentials,
                 '{}_ENDPOINT'.format(prefix),
@@ -457,6 +465,7 @@ def main():
         'region': os.environ['MOTUZ_REGION'],
         'access_key_id': os.environ['MOTUZ_ACCESS_KEY_ID'],
         'secret_access_key': os.environ['MOTUZ_SECRET_ACCESS_KEY'],
+        'aws_session_token': os.environ['MOTUZ_AWS_SESSION_TOKEN'],
     }
 
     connection = RcloneConnection()

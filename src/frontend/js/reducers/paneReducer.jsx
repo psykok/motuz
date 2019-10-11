@@ -21,6 +21,7 @@ const INITIAL_PANE = {
         type: 'file',
         access_key_id: '',
         access_key_secret: '',
+        aws_session_token: '',
         region: '',
     },
     path: '/',

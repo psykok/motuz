@@ -103,6 +103,20 @@ class CloudConnectionDialogFields extends React.PureComponent {
                     error={this.props.errors.s3_region}
                     is_valid={this.props.verifySuccess}
                 />
+                <div className="row form-group required">
+                    <div className="col-4 text-right control-label">
+                        <b>AWS Authentication</b>
+                    </div>
+                    <div className="col-8">
+                        <select
+                            className="form-control"
+                            name='s3_env_auth'
+                        >
+                            <option value="false">false</option>
+                            <option value="true">true</option>
+                        </select>
+                    </div>
+                </div>
 
                 <h5 className='text-primary mt-5 mb-2'>Credentials</h5>
 
@@ -111,9 +125,8 @@ class CloudConnectionDialogFields extends React.PureComponent {
                     input={{
                         name: 's3_access_key_id',
                         defaultValue: this.props.data.s3_access_key_id,
-                        required: true,
                     }}
-                    error={this.props.errors.s3_access_key_id}
+                    error={this.props.errors.s3_region}
                     is_valid={this.props.verifySuccess}
                 />
 
@@ -122,9 +135,18 @@ class CloudConnectionDialogFields extends React.PureComponent {
                     input={{
                         name: 's3_secret_access_key',
                         defaultValue: this.props.data.s3_secret_access_key,
-                        required: true,
                     }}
-                    error={this.props.errors.s3_secret_access_key}
+                    error={this.props.errors.s3_region}
+                    is_valid={this.props.verifySuccess}
+                />
+
+                <CloudConnectionField
+                    label='aws_session_token'
+                    input={{
+                        name: 's3_aws_session_token',
+                        defaultValue: this.props.data.s3_aws_session_token,
+                    }}
+                    error={this.props.errors.s3_aws_session_token}
                     is_valid={this.props.verifySuccess}
                 />
 
